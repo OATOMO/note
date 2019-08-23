@@ -1,4 +1,14 @@
 data = pd.Series(['1','2','3'])		#一维数据
+data = pd.DataFrame([[1,2,3],[3,2,1],[2,2,2]])	#二维数据
 
+data.dropna()过滤缺失值,可通过阈值调节对缺失值的容忍度
+//二维数据的话有一个缺失就丢弃整行,传入how='all'要全为na才丢弃整行,传入axis=1则是删除列
+//pd.DataFrame(np.random.randn(7,3))	#7行3列随机矩阵
+
+
+data.fillna() 用指定值或插值(ffill or bfill)的方法填充缺失值
+//常数调用填充统一值data.fillna(0)
+//字典调用实现对不同列填充data.fillna({1:0.5,2:0})
 
 data.isnull()	#为空数据的 索引 与 布尔值
+data.notnull()	#isnull的否定
